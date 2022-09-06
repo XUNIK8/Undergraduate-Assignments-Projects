@@ -1,0 +1,27 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18\par
+\cf1 for\cf0  !3 = 1 \cf1 to\cf0  2\par
+\tab genr f1_\{!3\} = e*(e(-!3)^2)\par
+     genr f2_\{!3\} = e*(e(-!3)^2)\par
+\par
+\tab scalar b_12_\{!3\} = @mean(f1_\{!3\})\par
+\tab scalar b_12_\{!3\} = @mean(f2_\{!3\})\par
+\cf1 next\cf0\par
+\par
+\cf1 for\cf0  !1 = 2 \cf1 to\cf0  4\par
+\tab\tab genr e_\{!1\} = e^!1\par
+\tab\tab scalar u_\{!1\} = @mean(e_\{!1\})\par
+\cf1 next\cf0\par
+\par
+\cf1 for\cf0  !2 = 1 \cf1 to\cf0  2\par
+\tab scalar tr_\{!2\} = b_21_\{!2\} - b_12_\{!2\}\par
+\par
+\tab scalar v_tr_\{!2\} = 2*(u_4*u_2 - u_3)/(@obs(e) - !2) - 2*(u_2^3)*(@obs(e) - 2*!2)/((@obs(e) -!2)^2)\par
+\par
+\tab scalar tr_stat_\{!2\} = tr_\{!2\}/@sqrt(v_tr_\{!2\})\par
+\par
+\cf1 next\cf0\par
+\par
+\par
+}

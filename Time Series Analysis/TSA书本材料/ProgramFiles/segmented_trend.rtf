@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 genr y = log(gnp)\par
+genr t = @trend + 1\par
+genr dt = 0\par
+genr du = 0\par
+\par
+smpl 1973q2 2016q4\par
+genr dt = @trend(1973q1)\par
+genr du = 1\par
+\par
+smpl @all\par
+equation eqn_seg.ls y c t dt\par
+eqn_seg.fit y_break\par
+\par
+genr y_tilde = resid\par
+equation eqn_seg_uroot.ls y_tilde y_tilde(-1) d(y_tilde(-1)) d(y_tilde(-2))\par
+\par
+scalar  tc = (1-@coefs(1))/@stderrs(1)\par
+\par
+equation eqn_ds_seg.ls d(y) c du ar(1)\par
+\par
+\par
+}

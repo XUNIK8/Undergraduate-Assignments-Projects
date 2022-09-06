@@ -1,0 +1,53 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 !reps = 1000\par
+!n = 100\par
+matrix(!reps,5) res1\par
+\cf1 for\cf0  !i = 1 \cf1 to\cf0  !reps\par
+\par
+smpl 1 1\par
+genr x\{!i\} = 0\par
+genr y\{!i\} = 0\par
+smpl 2 !n+1\par
+genr v\{!i\} = @nrnd\par
+genr u\{!i\} = @nrnd\par
+genr x\{!i\} = x\{!i\}(-1) + v\{!i\}\par
+genr y\{!i\} = y\{!i\}(-1) + u\{!i\}\par
+\par
+res1(!i,1) = @cor(v\{!i\}, u\{!i\})\par
+res1(!i,2) = @cor(x\{!i\}, y\{!i\})\par
+res1(!i,5) = @cor(x\{!i\}, u\{!i\})\par
+\par
+\par
+smpl 1 2\par
+genr w\{!i\} = 0\par
+genr z\{!i\} = 0\par
+smpl 3 !n+2\par
+genr w\{!i\} = w\{!i\}(-1) + x\{!i\}\par
+genr z\{!i\} = z\{!i\}(-1) + y\{!i\} \par
+\par
+res1(!i,3) = @cor(w\{!i\},z\{!i\})\par
+res1(!i,4) = @cor(w\{!i\},y\{!i\})\par
+\par
+d x\{!i\}\par
+d u\{!i\}\par
+d v\{!i\}\par
+d y\{!i\}\par
+d w\{!i\}\par
+d z\{!i\}\par
+\par
+\par
+\cf1 next\cf0\par
+\par
+smpl 1 !reps\par
+\par
+series r00\par
+series r11\par
+series r22\par
+series r12\par
+series r01\par
+group g1 r00 r11 r22 r12 r01 \par
+mtos(res1,g1)\par
+\par
+\par
+}

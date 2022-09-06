@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 genr y = rainfall\par
+\par
+genr t = @trend\par
+\par
+\cf1 for\cf0  !1 = 1 \cf1 to\cf0  12\par
+   genr s\{!1\} = @seas(!1)\par
+\cf1 next\cf0\par
+\par
+matrix (100,2) logl\par
+!count = 0\par
+\par
+\cf1 for\cf0  !j = 0.01 \cf1 to\cf0  1 \cf1 step\cf0  0.01\par
+scalar lambda = !j\par
+\par
+genr ybc = (y^lambda - 1)/lambda\par
+\par
+ls ybc s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s1*t s2*t s3*t s4*t s5*t s6*t s7*t s8*t s9*t s10*t s11*t s12*t\par
+\par
+scalar ll = -(@regobs/2)*log(@ssr) + (lambda-1)*@sum(log(y))\par
+\par
+!count = !count + 1\par
+logl(!count,1) = !j\par
+logl(!count,2) = ll\par
+\par
+\cf1 next\cf0\par
+\par
+\par
+}

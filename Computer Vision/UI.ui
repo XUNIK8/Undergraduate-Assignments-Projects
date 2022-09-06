@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageProcessor</class>
+ <widget class="QWidget" name="ImageProcessor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1260</width>
+    <height>994</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label1">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>601</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(225, 225, 225);
+background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text">
+    <string>原始图像</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label2">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>10</y>
+     <width>601</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(225, 225, 225);
+background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>处理图像</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>540</y>
+     <width>1231</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>实验一</string>
+    </attribute>
+    <widget class="QPushButton" name="btn3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>93</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>选择功能</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le3">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>80</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn4">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>140</y>
+       <width>93</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>选择方向</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le4">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>140</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn5">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>200</y>
+       <width>93</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>设置参数</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le5">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>200</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn8">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>260</y>
+       <width>93</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>查看像素</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le6">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>260</y>
+       <width>279</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>实验二</string>
+    </attribute>
+    <widget class="QPushButton" name="btn9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>93</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>全局直方图</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn11">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>20</y>
+       <width>93</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>局部直方图</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn12">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>20</y>
+       <width>93</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>局部图像增强</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label3">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>10</y>
+       <width>361</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(245, 245, 245);
+border-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>全局直方图</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label4">
+     <property name="geometry">
+      <rect>
+       <x>860</x>
+       <y>10</y>
+       <width>361</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(245, 245, 245);
+border-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>局部直方图</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn10">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>20</y>
+       <width>93</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>全局均衡增强</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>全局均值：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>全局方差：</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>150</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>局部均值：</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>200</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>局部方差：</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label5">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>260</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label6">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>310</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>160</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>E</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le10">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>150</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>100</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>K0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le12">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>90</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label7">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>140</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label8">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>190</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>160</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>K1</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le13">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>150</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>220</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>K2</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le14">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>210</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>220</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sxy</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le11">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>210</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>参数设置：</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>100</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>设置参数：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le7">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>90</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le8">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>90</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le9">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>90</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>实验三</string>
+    </attribute>
+    <widget class="QLabel" name="label9">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>10</y>
+       <width>361</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(245, 245, 245);
+border-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>原频谱</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label10">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>10</y>
+       <width>361</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(245, 245, 245);
+border-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>滤波频谱</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>140</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>N</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>200</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>D0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_22">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>90</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>参数设置：</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le15">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>130</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le16">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>190</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn13">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>260</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>陷波滤波</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn13_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>260</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>查看像素</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>40</y>
+       <width>72</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>图</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="le17">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>实验四</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>实验五</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>实验六</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn1">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>940</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>打开图片</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn6">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>940</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>处理图像</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn7">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>940</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>一键复原</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn2">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>940</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>保存图片</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>label1</sender>
+   <signal>linkHovered(QString)</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>mouseTrack()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>428</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>681</x>
+     <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn9</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>showAllHist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>35</x>
+     <y>897</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn11</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>showPartHist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>494</x>
+     <y>634</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>556</x>
+     <y>881</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn10</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>equalizeHist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>622</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>316</x>
+     <y>544</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn12</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>equalizePartHist()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>634</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>866</x>
+     <y>538</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn3</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>selectFunc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>609</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>30</x>
+     <y>880</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn4</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>selectDire()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>684</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>54</x>
+     <y>908</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn5</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>selectPara()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>744</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>83</x>
+     <y>917</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn8</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>checkPixel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>786</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>10</x>
+     <y>534</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn1</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>openImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>904</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>304</x>
+     <y>879</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn6</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>processImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>521</x>
+     <y>893</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>543</x>
+     <y>895</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn7</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>originImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>724</x>
+     <y>898</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>790</x>
+     <y>894</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn2</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>saveImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>962</x>
+     <y>896</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1065</x>
+     <y>898</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>label2</sender>
+   <signal>linkHovered(QString)</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>mouseTrack()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>717</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>386</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn13</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>notch_filter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>414</x>
+     <y>739</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>523</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn13_2</sender>
+   <signal>clicked()</signal>
+   <receiver>ImageProcessor</receiver>
+   <slot>checkPixel_spectrum()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>370</x>
+     <y>673</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>484</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openImg()</slot>
+  <slot>saveImg()</slot>
+  <slot>selectFunc()</slot>
+  <slot>selectPara()</slot>
+  <slot>selectDire()</slot>
+  <slot>processImg()</slot>
+  <slot>originImg()</slot>
+  <slot>checkPixel()</slot>
+  <slot>mouseTrack()</slot>
+  <slot>showAllHist()</slot>
+  <slot>showPartHist()</slot>
+  <slot>equalizeHist()</slot>
+  <slot>equalizePartHist()</slot>
+  <slot>notch_filter()</slot>
+  <slot>checkPixel_spectrum()</slot>
+ </slots>
+</ui>

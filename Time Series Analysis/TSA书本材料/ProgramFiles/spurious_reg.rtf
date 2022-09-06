@@ -1,0 +1,45 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 !reps = 1000\par
+\par
+matrix(!reps,3) res1\par
+\par
+\cf1 for\cf0  !i = 1 \cf1 to\cf0  !reps\par
+\par
+smpl 1 1\par
+genr x\{!i\} = 0\par
+genr u\{!i\} = 0\par
+\par
+smpl 2 51\par
+genr v\{!i\} = @nrnd\par
+genr e\{!i\} = @nrnd\par
+genr x\{!i\} = x\{!i\}(-1) + v\{!i\}\par
+genr u\{!i\} = u\{!i\}(-1) + e\{!i\}\par
+genr y\{!i\} = u\{!i\} \par
+\par
+equation eqn1\{!i\}.ls  y\{!i\} x\{!i\} c\par
+res1(!i,1) = eqn1\{!i\}.@tstats(1)\par
+res1(!i,2) = eqn1\{!i\}.@r2\par
+res1(!i,3) = eqn1\{!i\}.@dw\par
+\par
+d x\{!i\}\par
+d u\{!i\}\par
+d v\{!i\}\par
+d e\{!i\}\par
+d y\{!i\}\par
+d eqn1\{!i\}\par
+\par
+\cf1 next\cf0\par
+\par
+smpl 1 !reps\par
+\par
+series t_stat_static\par
+series rsq_static\par
+series dw_static\par
+group g1 t_stat_static rsq_static dw_static\par
+mtos(res1,g1)\par
+genr abs_t_stat_static = abs(t_stat_static)\par
+genr diff = rsq_static - dw_static\par
+\par
+\par
+}

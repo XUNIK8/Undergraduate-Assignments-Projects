@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 genr y = cet\par
+\par
+y.uroot(adf, exog=trend, lagmethod=sic,save=mout_1)\par
+\par
+y.uroot(kpss, exog=trend, lagmethod=sic,save=mout_2)\par
+\par
+scalar u = mout_1(3)\par
+scalar v = mout_2(3)\par
+scalar k = 0.00025\par
+scalar cv = 1.96\par
+\par
+equation eq_levels.ls(cov=hac, covkern=bart,covbw=neweywest,covlag=a, covinfosel=aic) y @trend c\par
+scalar b_0 = @coefs(1)\par
+scalar s_0 = @stderrs(1)\par
+\par
+equation eq_diffs.ls(cov=hac, covkern=bart,covbw=neweywest,covlag=a,covinfosel=aic)  d(y) c\par
+scalar b_1 = @coefs(1)\par
+scalar s_1 = @stderrs(1)\par
+\par
+\par
+scalar lam = exp(-k*(u/v)^2)\par
+\par
+scalar z_lam = (1-lam)*b_0/s_0 + lam*b_1/s_1\par
+\par
+scalar den = ((1-lam)*s_1) + lam*s_0\par
+\par
+scalar b_lam = ((1-lam)*b_0*s_1 + lam*b_1*s_0)/den\par
+\par
+scalar b_lam_se = s_0*s_1/den\par
+\par
+scalar b_lam_int = cv*b_lam_se\par
+\par
+scalar b_lam_upp = b_lam + b_lam_int\par
+scalar b_lam_low = b_lam - b_lam_int\par
+\par
+scalar marg_sig_lev = 1 - @cnorm(z_lam)\par
+\par
+\par
+}

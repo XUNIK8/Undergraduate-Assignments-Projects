@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\cf1\f0\fs18 for\cf0  !1 = 1 \cf1 to\cf0  3\par
+       genr w_\{!1\}1 = @cumsum(cos_\{!1\})\par
+       genr w_\{!1\}2 = @cumsum(sin_\{!1\})\par
+\cf1 next\cf0\par
+\par
+genr z = @cumsum(p)\par
+genr y = @cumsum(t)\par
+\par
+equation eq_0.ls z t y\par
+scalar rss_u = @ssr\par
+scalar n = @regobs\par
+\par
+equation eq_1.ls z t y w_11 w_12\par
+scalar w01 = (rss_u-@ssr)/(@ssr/n)\par
+\par
+equation eq_2.ls z t y w_11 w_12 w_21 w_22\par
+scalar w02 = (rss_u-@ssr)/(@ssr/n)\par
+\par
+equation eq_3.ls z t y w_11 w_12 w_21 w_22 w_31 w_32\par
+scalar w03 = (rss_u-@ssr)/(@ssr/n)\par
+\par
+genr e = resid\par
+\par
+ls d(e) e(-1) d(e(-1)) \par
+\par
+scalar df = @tstats(1)\par
+\par
+scalar mw01 = w01*exp(-9.484/abs(df))/n\par
+scalar mw02 = w02*exp(-14.193/abs(df))/n\par
+scalar mw03 = w03*exp(-18.349/abs(df))/n\par
+\par
+\par
+}

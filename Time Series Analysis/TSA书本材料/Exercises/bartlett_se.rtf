@@ -1,0 +1,15 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 scalar t = 816\par
+\par
+series s = acf\par
+\par
+!1 = @obs(s)\par
+smpl 1 1\par
+genr v = (1/t)\par
+smpl 2 !1\par
+genr v = v(-1) + (2/t)*s(-1)^2\par
+smpl 1 !1\par
+genr se = v^0.5\par
+\par
+\par
+}

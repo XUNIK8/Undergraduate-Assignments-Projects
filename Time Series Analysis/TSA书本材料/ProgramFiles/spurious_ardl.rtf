@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 !reps = 1000\par
+\par
+matrix(!reps,8) res2\par
+\cf1 for\cf0  !i = 1 \cf1 to\cf0  !reps\par
+\par
+smpl 1 1\par
+genr x\{!i\} = 0\par
+genr u\{!i\} = 0\par
+\par
+smpl 2 51\par
+genr v\{!i\} = @nrnd\par
+genr e\{!i\} = @nrnd\par
+genr x\{!i\} = x\{!i\}(-1) + v\{!i\}\par
+genr u\{!i\} = u\{!i\}(-1) + e\{!i\}\par
+genr y\{!i\} = u\{!i\} \par
+\par
+equation eqn2\{!i\}.ls y\{!i\} x\{!i\} x\{!i\}(-1) y\{!i\}(-1) c\par
+res2(!i,1) = eqn2\{!i\}.@tstats(1)\par
+res2(!i,2) = eqn2\{!i\}.@coefs(1)\par
+res2(!i,3) = eqn2\{!i\}.@tstats(2)\par
+res2(!i,4) = eqn2\{!i\}.@coefs(2)\par
+res2(!i,5) = eqn2\{!i\}.@coefs(3)\par
+res2(!i,6) = eqn2\{!i\}.@r2\par
+res2(!i,7) = eqn2\{!i\}.@dw\par
+res2(!i,8) = eqn2\{!i\}.@stderrs(3)\par
+\par
+\par
+d x\{!i\}\par
+d u\{!i\}\par
+d v\{!i\}\par
+d e\{!i\}\par
+d y\{!i\}\par
+d eqn2\{!i\}\par
+\par
+\cf1 next\cf0\par
+\par
+smpl 1 !reps\par
+\par
+series t_1_dl\par
+series beta_1_dl\par
+series t_2_dl\par
+series beta_2_dl\par
+series gamma_dl\par
+series rsq_dl\par
+series dw_dl\par
+series se_gamma\par
+group g2 t_1_dl beta_1_dl t_2_dl beta_2_dl gamma_dl rsq_dl dw_dl se_gamma\par
+mtos(res2, g2)\par
+\par
+genr abs_t_1_dl = abs(t_1_dl)\par
+genr abs_t_2_dl = abs(t_2_dl)\par
+genr h = (1 - 0.5*dw_dl)*@sqrt(50/(1 - 50*(se_gamma^2)))\par
+\par
+\par
+}

@@ -1,0 +1,17 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang2057{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}}
+\viewkind4\uc1\pard\tx0\tx240\tx480\tx720\tx960\tx1200\tx1440\tx1680\tx1920\tx2160\tx2400\tx2640\tx2880\tx3120\tx3360\tx3600\tx3840\tx4080\tx4320\tx4560\tx4800\tx5040\tx5280\tx5520\tx5760\tx6000\tx6240\tx6480\tx6720\tx6960\tx7200\tx7440\f0\fs18 genr x = storms\par
+scalar r1 = 0.384\par
+scalar r2 = 0.300\par
+\par
+scalar a = (@obs(x)*r1 + 1)/(@obs(x) - 3)\par
+scalar l1 = (1 - a)*@mean(x)\par
+\par
+scalar a1 = r1*(1 - r2)/(1 - r1^2)\par
+scalar a2 = (r2 - r1^2)/(1 - r1^2)\par
+scalar l2 =  (1 - a1 -a2)*@mean(x)\par
+\par
+genr w1 = x - a*x(-1) - l1\par
+genr w2 = x - a1*x(-1) - a2*x(-2) - l2\par
+\par
+\par
+}
